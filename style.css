@@ -1,0 +1,184 @@
+/* - Importando as fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+/*
+    - Reset
+    Utilizamos o reset para redefinir algumas propriedades
+    que são atribuídas pelo navegador. Isso faz com que nossos
+    estilos estejam sempre alinhados com o protótipo do Figma.
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-inter);
+    text-decoration: none;
+}
+
+/*
+    - Variáveis
+    As variáveis do CSS são utilizadas para salvar valores que podem
+    ou serão reutilizados várias vezes.
+*/
+:root {
+    --font-pixel: "Pixelify Sans", sans-serif;
+    --font-inter: 'Inter', sans-serif;
+
+    --c-background: #F6F6F6;
+    --c-red: #EF3F44;
+    --c-black-primary: #181818;
+    --c-black-secondary: #6B6B6B;
+}
+
+/*
+    - Estilos gerais
+    A partir daqui já vamos definir o estilo para todos os elementos
+    restantes.
+*/
+
+html, body {
+    background-color: var(--c-background);
+    min-height: 100dvh;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 90px;
+    justify-content: space-between;
+}
+
+header {
+    padding: 24px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+
+    nav {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        a {
+            color: var(--c-black-primary);
+            font-size: 12px;
+        }
+
+        button {
+            width: 137px;
+            padding: 12px 25px;
+            background-color: var(--c-black-primary);
+            color: #fff;
+            border: none;
+            border-radius: 60px;
+        }
+    }
+}
+
+section {
+    h2,
+    h1, h1 span {
+        text-align: center;
+        font-family: var(--font-pixel);
+    }
+
+    h1 {
+        font-size: 64px;
+        font-weight: 700;
+
+        span {
+            color: var(--c-red);
+        }
+    }
+
+    h2 {
+        margin-bottom: 16px;
+        font-size: 40px;
+    }
+
+    #squares {
+        display: flex;
+        gap: 80px;
+        justify-content: center;
+        margin-top: 20px;
+
+        span {
+            display: block;
+            width: 140px;
+            height: 140px;
+            background-color: var(--c-black-primary);
+            border-radius: 25px;
+
+            &.red {
+                background-color: var(--c-red);
+                box-shadow: -12px 10px 46px 0px rgba(0, 0, 0, 0.25);
+            }
+
+            &:nth-of-type(1) {
+                margin-top: 140px;
+            }
+
+            &:nth-of-type(2) {
+                margin-top: 75px;
+            }
+
+            &:nth-of-type(3) {
+                margin-top: 25px;
+            }
+
+            &:nth-of-type(4) {
+                margin-top: 85px;
+            }
+        }
+    }
+}
+
+footer {
+    padding: 24px 32px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+
+    article {
+        display: flex;
+        flex-direction: column;
+
+        &:nth-of-type(1) {
+            gap: 24px;
+            
+            img {
+                width: 75px;
+            }
+
+            p {
+                color: var(--c-black-primary);
+                font-size: 12px;
+            }
+        }
+
+        &:nth-of-type(2) {
+            gap: 16px;
+
+            h1 {
+                color: var(--c-black-primary);
+                font-size: 12px;
+                font-weight: 400;
+            }
+
+            ul {
+                list-style: none;
+                display: flex;
+                gap: 12px;
+                flex-direction: column;
+
+                a {
+                    color: var(--c-black-secondary);
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
